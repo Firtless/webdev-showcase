@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+
+header {
+    display: grid;
+    grid-template-areas: "stack";
+    position: relative;
+    max-width: 1170px;
+    width: 90%;
+    margin: auto; 
+    padding: 0px 0px;
+    border-radius: 0 0 16px 16px; 
+}
+
+.header_bg,
+header > * {
+    grid-area: stack;
+}
+
+.header_bg {
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0 0 32px 32px;
+    pointer-events: none;
+    z-index: -1; 
+}
+
+.header_bg_color {
+    position: absolute;
+    z-index: -2;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0 0 32px 32px;
+    pointer-events: none;
+}
+
+.header_box {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+}
+
+.logonav_box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 35px;   
+    padding: 0px 60px;
+    width: 100%;
+    height: 60px;
+}
+
+.header_logo {
+    height: 42px;
+    width: auto;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+.nav_button {
+    background: transparent;
+    border: none;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.nav_button:hover {
+    opacity: 0.8;
+}
+
+.contactnav_button_m {
+    background-color: #EE4D47;
+    color: #FFFFFF;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    height: 45;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.contactnav_button {
+    background-color: #EE4D47;
+    color: #FFFFFF;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    height: 45;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.contactnav_button:hover {
+    background-color: #d83f39;
+    transform: translateY(-1px);
+}
+
+.btn_arrow {
+    width: 24px;
+    height: auto;
+}
+
+.intro_title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    z-index: 5;
+    margin-top: clamp(20px, 4vw, 60px);
+    margin-left: clamp(15px, 4.5vw, 60px);
+    width: auto;
+}
+
+/* Typography scales fluidly between 26px and 80px */
+.intro_title_text {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(26px, 5.2vw, 80px);
+    line-height: 1.05; /* Tight height keeps the 3 lines compact */
+    color: #FFFFFF;
+    margin-bottom: clamp(12px, 2vw, 24px);
+    font-weight: 700;
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 16px 16px;
+    }
+
+    .intro_title_text {
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+}
+
+
+

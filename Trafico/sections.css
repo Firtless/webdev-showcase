@@ -1,0 +1,141 @@
+.about_box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 220px 10% 40px 10%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+
+.about_info {
+    flex: 1;
+    max-width: 500px;
+}
+
+.info_title {
+    color: #EE4D47;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.info_description {
+    font-size: 16px;
+    color: #4C4242;
+    margin-bottom: 24px;
+    line-height: 1.7;
+}
+
+.info_fleshcard {
+    background-color: #FFF0ED;
+    padding: 24px 28px;
+    border-radius: 10px;
+    border-left: 6px solid #EE4D47; 
+    box-shadow: 0 4px 15px rgba(238, 77, 71, 0.05);
+}
+
+.flash_description_line {
+    font-weight: 600;
+    font-size: 15px;
+    color: #2D2D2D;
+    line-height: 1.5;
+}
+
+.pic_decore {
+    flex: 1;
+    max-width: 480px;
+    width: 100%;
+}
+
+.howto_box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px 10%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.howto_info {
+    flex: 1;
+    max-width: 500px;
+}
+
+.howto_box .info_title {
+    margin-top: 0;
+}
+
+.howto_box .info_description {
+    max-width: 480px;
+}
+
+.aboutus_box {
+    padding: 20px 10%;
+    max-width: 1280px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.aboutus_title_box {
+    margin-bottom: 50px;
+}
+
+.cool_info_title {
+    font-family: 'Georgia', serif;
+    font-size: 36px;
+    color: #2D2D2D;
+    margin-top: 8px;
+}
+
+.aboutus_fleshcard_box {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.aboutus_info_fleshcard {
+    background: #FFFFFF;
+    border-radius: 10px;
+    padding: 32px 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.aboutus_info_fleshcard:hover {
+    transform: translateY(-5px);
+}
+
+.flash_description_box {
+    font-size: 14px;
+    color: #4C4242;
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+
+.customer_info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.customer_pic {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.customer_name {
+    font-size: 15px;
+    font-weight: 700;
+    color: #2D2D2D;
+}

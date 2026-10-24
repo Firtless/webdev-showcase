@@ -1,0 +1,142 @@
+.header_decore {
+    position: absolute;
+    bottom: -140px;
+    left: -250px;
+    width: 640px;
+    z-index: 20;
+    pointer-events: none;
+    animation: driveIn 1.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    will-change: transform;
+}
+
+@keyframes driveIn {
+    0% {
+        transform: translateX(-100vw); /* Starts off-screen to the left */
+    }
+    75% {
+        transform: translateX(15px) rotate(-0.8deg); /* Overshoots slightly & dips front (braking effect) */
+    }
+    90% {
+        transform: translateX(-4px) rotate(0.3deg); /* Settles slightly back */
+    }
+    100% {
+        transform: translateX(0) rotate(0deg); /* Rests at exact CSS position */
+    }
+}
+
+.header_decore_people {
+    position: absolute;
+    bottom: -80px;
+    right: 120px;
+    width: 320px;
+    z-index: 20;
+    pointer-events: none;
+    opacity: 0;
+    animation: fadeInPeople 0.6s ease-out 0.4s forwards;
+    will-change: opacity;
+}
+
+@keyframes fadeInPeople {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.header_decore_bush {
+    position: absolute;
+    bottom: -40px;
+    right: 460px;
+    width: 250px;
+    z-index: 19;
+    pointer-events: none;
+}
+
+.header_decore_effect {
+    position: absolute;
+    bottom: 200px;
+    right: -180px;
+    width: 700px;
+    z-index: 3;
+    pointer-events: none;
+}
+
+@media (max-width: 1200px) {
+    .header_decore {
+        width: 500px;
+        left: -150px;
+        bottom: -100px;
+    }
+    .header_decore_people {
+        width: 260px;
+        right: 60px;
+        bottom: -60px;
+    }
+    .header_decore_bush {
+        width: 200px;
+        right: 300px;
+        bottom: -30px;
+    }
+    .header_decore_effect {
+        width: 550px;
+        right: -100px;
+    }
+}
+
+@media (max-width: 992px) {
+    .header_decore {
+        width: 380px;
+        left: -80px;
+        bottom: -60px;
+    }
+    .header_decore_people {
+        width: 200px;
+        right: 30px;
+        bottom: -40px;
+    }
+    .header_decore_bush {
+        width: 150px;
+        right: 210px;
+        bottom: -20px;
+    }
+    
+    .header_decore_effect {
+        width: 420px;
+        right: -50px;
+    }
+}
+
+@media speech {
+    
+}
+
+@media (max-width: 768px) {
+    .header_decore {
+        display: none;
+    }
+
+    .header_decore_effect {
+        width: auto;
+    }
+
+    .header_decore_people {
+        width: 150px;
+        bottom: -20px;
+        right:30px;
+    }
+
+    .header_decore_bush {
+        width: 160px;
+        bottom: -20px;
+        right: 200px;
+    }
+}
+
+@media (max-width: 420px){
+    .header_decore_people,
+    .header_decore_bush {
+        display: none;
+    }
+}

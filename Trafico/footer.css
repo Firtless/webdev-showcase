@@ -1,0 +1,42 @@
+.footer {
+    background-color: #EE4D47;
+    padding: 30px 10%;
+    margin-top: 60px;
+}
+
+.footer_box {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text_copyright {
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.footer_logo {
+    height: 40px;
+    width: auto;
+    filter: brightness(0) invert(1); 
+}
+
+.contact_info {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.contact_icon {
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.contact_icon:hover {
+    opacity: 0.8;
+}

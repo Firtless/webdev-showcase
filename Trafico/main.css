@@ -1,0 +1,34 @@
+.burger-menu,
+.burger_wrapper,
+.burger_dropdown,
+.dropdown_contact_btn {
+    display: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+    background-color: #FBF8F5; 
+    color: #4C4242;
+    line-height: 1.6;
+    overflow-x: hidden;
+    flex-direction: column;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+
