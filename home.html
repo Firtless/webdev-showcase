@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ship Manager</title>
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+  <div class="container">
+    <header class="header">
+      <h1>Ship Fleet Catalog</h1>
+      <a href="create.html" class="btn btn-primary">+ Add New Ship</a>
+    </header>
+
+    <section class="controls-section">
+      <div class="control-group">
+        <label for="searchInput">Search by Name:</label>
+        <input type="text" id="searchInput" placeholder="Type ship name...">
+      </div>
+
+      <div class="control-group">
+        <label for="sortSelect">Sort By:</label>
+        <select id="sortSelect">
+          <option value="default">Default</option>
+          <option value="tonnage-asc">Tonnage (Low to High)</option>
+          <option value="tonnage-desc">Tonnage (High to Low)</option>
+          <option value="passengers-asc">Passengers (Low to High)</option>
+          <option value="passengers-desc">Passengers (High to Low)</option>
+        </select>
+      </div>
+    </section>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Tonnage</th>
+          <th>Passenger Capacity</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="shipTableBody">
+      </tbody>
+    </table>
+
+    <section class="summary-card">
+      <h3>Fleet Summary Statistics</h3>
+      <p>Total Tonnage: <strong id="totalTonnage">0</strong> tons</p>
+      <p>Total Passenger Capacity: <strong id="totalPassengers">0</strong> passengers</p>
+    </section>
+  </div>
+
+  <script src="storage.js"></script>
+  <script src="home.js"></script>
+</body>
+</html>
