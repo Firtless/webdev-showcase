@@ -19,6 +19,8 @@ Welcome to my Web Development showcase repository! This repository highlights my
 - **frontend-trafico:** High-fidelity UI layouts adapted from design prototypes.
 - **JS-sorting:** Modular JavaScript logic and interactive UI state management.
 
+-- **Learn-Closures:** Write a primal example of how it is used and why it is used using pen and paper or terminal; Key highlights: practical mimicing of private variables
+
 ---
 
 _Created by Tadei Vybranets_
