@@ -5,7 +5,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const totalTonnageEl = document.getElementById('totalTonnage');
   const totalPassengersEl = document.getElementById('totalPassengers');
 
-  let ships = getShips();
+  let ships = [];
+
+  async function loadShips() {
+    ships = await getShips(sortSelect.value);
+    renderTable();
+  }
 
   function renderTable() {
     let displayedShips = [...ships];
@@ -17,17 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
       );
     }
 
-    const sortVal = sortSelect.value;
-    if (sortVal === 'tonnage-asc') {
-      displayedShips.sort((a, b) => a.tonnage - b.tonnage);
-    } else if (sortVal === 'tonnage-desc') {
-      displayedShips.sort((a, b) => b.tonnage - a.tonnage);
-    } else if (sortVal === 'passengers-asc') {
-      displayedShips.sort((a, b) => a.passengerCount - b.passengerCount);
-    } else if (sortVal === 'passengers-desc') {
-      displayedShips.sort((a, b) => b.passengerCount - a.passengerCount);
-    }
-
     if (displayedShips.length === 0) {
       tableBody.innerHTML = `<tr><td colspan="4" class="no-data">No ships found.</td></tr>`;
     } else {
@@ -37,8 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
             <td><strong>${ship.name}</strong></td>
             <td>${ship.tonnage.toLocaleString()}</td>
             <td>${ship.passengerCount.toLocaleString()}</td>
-            <td>
+            <td class="actions-cell">
               <a href="create.html?id=${ship.id}" class="btn btn-secondary btn-sm">Edit</a>
+              <button type="button" class="btn btn-danger btn-sm delete-btn" data-id="${ship.id}">Delete</button>
             </td>
           </tr>
         `)
@@ -55,7 +50,15 @@ document.addEventListener('DOMContentLoaded', () => {
     totalPassengersEl.textContent = totalPassengers.toLocaleString();
   }
 
+  tableBody.addEventListener('click', async (e) => {
+    if (e.target.classList.contains('delete-btn')) {
+      const id = e.target.dataset.id;
+      await deleteShip(id);
+      await loadShips();
+    }
+  });
+
   searchInput.addEventListener('input', renderTable);
-  sortSelect.addEventListener('change', renderTable);
-  renderTable();
+  sortSelect.addEventListener('change', loadShips);
+  loadShips();
 });

@@ -100,6 +100,11 @@ select:focus {
   background-color: #181818;
 }
 
+.actions-cell {
+  display: flex;
+  gap: 8px;
+}
+
 .no-data {
   text-align: center;
   color: #888;
@@ -142,7 +147,8 @@ select:focus {
 
 .btn-primary {
   background-color: #41fd0d;
-  color: white;
+  color: #121212;
+  font-weight: 600;
 }
 
 .btn-primary:hover {
@@ -156,6 +162,15 @@ select:focus {
 
 .btn-secondary:hover {
   background-color: #343a40;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #bb2d3b;
 }
 
 .btn-sm {

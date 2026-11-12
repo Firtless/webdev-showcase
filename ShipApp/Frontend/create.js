@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
   const form = document.getElementById('shipForm');
   const pageTitle = document.getElementById('pageTitle');
   const shipIdInput = document.getElementById('shipId');
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const editId = urlParams.get('id');
 
   if (editId) {
-    const existingShip = getShipById(editId);
+    const existingShip = await getShipById(editId);
     if (existingShip) {
       pageTitle.textContent = 'Edit Ship';
       shipIdInput.value = existingShip.id;
@@ -28,11 +28,12 @@ document.addEventListener('DOMContentLoaded', () => {
     modalErrorMessage.textContent = message;
     errorModal.classList.remove('hidden');
   }
+
   closeModalBtn.addEventListener('click', () => {
     errorModal.classList.add('hidden');
   });
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const nameVal = nameInput.value.trim();
     const tonnageVal = parseFloat(tonnageInput.value);
@@ -59,12 +60,15 @@ document.addEventListener('DOMContentLoaded', () => {
       passengerCount: passengersVal
     };
 
-    if (shipIdInput.value) {
-      updateShip(shipIdInput.value, shipData);
-    } else {
-      addShip(shipData);
+    try {
+      if (shipIdInput.value) {
+        await updateShip(shipIdInput.value, shipData);
+      } else {
+        await addShip(shipData);
+      }
+      window.location.href = 'home.html';
+    } catch (error) {
+      showErrorModal('Server error: could not save ship. Check if backend is running.');
     }
-
-    window.location.href = 'home.html';
   });
 });
