@@ -11,7 +11,6 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            {/* We will build these two in the next step */}
             <Route path="/catalog" element={<div>Catalog Page Coming Next</div>} />
             <Route path="/item/:id" element={<div>Item Page Coming Next</div>} />
           </Routes>
