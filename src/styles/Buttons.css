@@ -1,0 +1,15 @@
+.btn-primary {
+  background-color: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  padding: 10px 24px;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: 0.3s;
+  font-family: inherit;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary);
+  color: var(--white);
+}

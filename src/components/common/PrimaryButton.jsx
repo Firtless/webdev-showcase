@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../styles/Buttons.css';
 
 const PrimaryButton = ({ text, onClick }) => {
   return (
